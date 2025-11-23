@@ -1,0 +1,345 @@
+/* =======================================
+    RESET
+======================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =======================================
+    TYPOGRAPHY  
+======================================= */
+
+@font-face {
+    font-family: IBM;
+    src: url(../fonts/IBMPlexSansArabic-Medium.ttf);
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: IBM;
+    src: url(../fonts/IBMPlexSansArabic-SemiBold.ttf);
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: IBM;
+    src: url(../fonts/IBMPlexSansArabic-Bold.ttf);
+    font-weight: 700;
+    font-display: swap;
+}
+
+body {
+    font-family: IBM, sans-serif;
+    background-color: var(--light);
+    font-size: 16px;
+}
+
+/* Utility weights */
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+
+
+/* =======================================
+    VARIABLES
+======================================= */
+:root {
+    --light: #F9FAFB;
+    --border-color: #E5E7EB;
+
+    /* Radius */
+    --radius-8: 8px;
+    --radius-16: 16px;
+
+    /* Shadow */
+    --shadow-base:
+        0px 1px 3px rgba(0, 0, 0, 0.1),
+        0px 1px 2px -1px rgba(0, 0, 0, 0.1);
+
+    --transition: 0.3s ease;
+}
+
+.mt-32 {
+    margin-top: 32px;
+}
+
+.mb-32 {
+    margin-bottom: 32px;
+}
+
+.mb-12 {
+    margin-bottom: 12px;
+}
+
+.p-12 {
+    padding: 12px;
+}
+
+
+/* css custom */
+
+.sidebar {
+    background-color: white;
+    height: 100vh;
+    box-shadow: var(--box-shadow);
+    border-left: 0.8px solid var(--border-color);
+    right: 0;
+    width: 256px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+/* Logo */
+.sidebar .logo-icon {
+    width: 56px;
+    height: 56px;
+    background-image: linear-gradient(to right bottom, oklch(0.546 0.245 262.881) 0%, oklch(0.457 0.24 277.023) 100%);
+    border-radius: var(--radius-16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--box-shadow);
+}
+
+.sidebar .logo-icon i {
+    font-size: 20px;
+    color: white;
+}
+
+.sidebar .logo-text {
+    font-size: 2.25rem;
+    font-family: IBM;
+    color: oklch(0.21 0.034 264.665);
+}
+
+.sidebar .logo-subtext {
+    font-family: IBM;
+    font-size: .875rem;
+    color: #4A5565;
+}
+
+/* =======================================
+    NAVIGATION
+======================================= */
+#nav-menu .primary-link {
+    background-color: #EFF6FF;
+    border-radius: var(--radius-16);
+}
+
+#nav-menu .secondary-link {
+    border-radius: var(--radius-16);
+    color: oklch(0.551 0.027 264.364);
+    transition: var(--transition);
+}
+
+#nav-menu .secondary-link i {
+    color: oklch(0.551 0.027 264.364) !important;
+    font-size: 1rem;
+}
+
+#nav-menu .secondary-link:hover {
+    background-color: #F3F4F6;
+}
+
+#nav-menu .active {
+    color: oklch(0.546 0.245 262.881);
+}
+
+#nav-menu span {
+    cursor: pointer;
+    padding: 16px 12px;
+}
+
+#nav-menu h2 {
+    font-family: IBM;
+    font-size: 1rem;
+    color:
+        oklch(0.446 0.03 256.802);
+}
+
+.sidebar-quick-actions h3 {
+    padding-inline: 8px;
+    font-family: IBM;
+    font-size: 14px;
+    color:
+        oklch(0.446 0.03 256.802);
+}
+
+.sidebar-quick-actions .btn-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-8);
+}
+
+.sidebar-quick-actions .btn-icon i {
+    font-size: 14px;
+}
+
+.sidebar-quick-actions span {
+    font-size: 14px;
+}
+
+.btn-hover {
+    cursor: pointer;
+    transition: var(--transition);
+    border-radius: var(--radius-16);
+}
+
+.btn-hover:hover {
+    background-color: #F3F4F6;
+    transform: translate(3px);
+    font-weight: 600;
+}
+
+.btn-hover:hover .bg-blue {
+    background-color: oklab(0.623 -0.0378409 -0.210628 / 0.15);
+    color: oklch(0.546 0.245 262.881);
+}
+
+.btn-hover:hover .bg-green {
+    background-color: oklab(0.723 -0.18885 0.110891 / 0.15);
+}
+
+.btn-hover:hover .bg-violet {
+    background-color: oklab(0.627 0.147802 -0.219953 / 0.15);
+}
+
+.btn-hover:hover .bg-brown {
+    background-color: oklab(0.705 0.143615 0.157301 / 0.15);
+}
+
+/* Colors */
+.bg-blue {
+    background-color: #DBE8FC;
+}
+
+.bg-green {
+    background-color: oklab(0.723 -0.188 0.11 / 0.1);
+}
+
+.bg-violet {
+    background-color: oklab(0.627 0.147 -0.219 / 0.1);
+}
+
+.bg-brown {
+    background-color: oklab(0.705 0.143 0.157 / 0.1);
+}
+
+.i-blue {
+    color: oklch(0.546 0.245 262.881);
+}
+
+.i-green {
+    color: oklch(0.518 0.213 142.478);
+}
+
+.i-violet {
+    color: oklch(0.435 0.175 306.391);
+}
+
+.i-brown {
+    color: oklch(0.646 0.222 41.116);
+}
+
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d5d5d5;
+    border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* =======================================
+    RESPONSIVE
+======================================= */
+
+/* Screens smaller than 1280px - Show icons only */
+@media (max-width: 1279px) {
+    .sidebar {
+        width: 64px;
+    }
+
+    .aside-content {
+        padding: 0 16px !important;
+    }
+
+    .sidebar .logo-text,
+    .sidebar .logo-subtext,
+    #nav-menu h2,
+    .sidebar-quick-actions h3,
+    .sidebar-quick-actions span {
+        display: none;
+    }
+
+    .logo{
+        padding-inline: 4px;
+    }
+
+    #nav-menu{
+        padding-inline: 8px;
+    }
+
+
+    #nav-menu span {
+        justify-content: center;
+    }
+
+    .sidebar-quick-actions .btn-icon {
+        margin: 0 auto !important;
+    }
+
+    .btn-hover{
+        margin-bottom: 3px !important;
+    }
+}
+
+/* Screens smaller than 768px - Hide sidebar */
+@media (max-width: 767px) {
+    .sidebar {
+        display: none;
+    }
+
+    main {
+        margin-right: 0;
+    }
+}
+
+/* =======================================
+    MAIN CONTENT
+======================================= */
+
+
+
+
+main {
+    font-family: IBM;
+    background-color: #F9FAFB;
+}
