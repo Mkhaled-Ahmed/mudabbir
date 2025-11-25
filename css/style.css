@@ -89,6 +89,9 @@ body {
     padding: 12px;
 }
 
+.p-32 {
+    padding: 32px !important;
+}
 
 /* css custom */
 
@@ -104,7 +107,7 @@ body {
 }
 
 /* Logo */
-.sidebar .logo-icon {
+.logo-icon {
     width: 56px;
     height: 56px;
     background-image: linear-gradient(to right bottom, oklch(0.546 0.245 262.881) 0%, oklch(0.457 0.24 277.023) 100%);
@@ -115,18 +118,18 @@ body {
     box-shadow: var(--box-shadow);
 }
 
-.sidebar .logo-icon i {
+.logo-icon i {
     font-size: 20px;
     color: white;
 }
 
-.sidebar .logo-text {
+.logo-text {
     font-size: 2.25rem;
     font-family: IBM;
     color: oklch(0.21 0.034 264.665);
 }
 
-.sidebar .logo-subtext {
+.logo-subtext {
     font-family: IBM;
     font-size: .875rem;
     color: #4A5565;
@@ -277,20 +280,272 @@ body {
     background: #a8a8a8;
 }
 
+
+
+
 /* =======================================
-    RESPONSIVE
+    MAIN CONTENT
+======================================= */
+main {
+    font-family: IBM;
+    background-color: #F9FAFB;
+    margin-right: 256px;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 16px 16px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header header header header header header header header header header header header"
+        "TotalExpenses TotalExpenses TotalExpenses TotalExpenses TotalIncome TotalIncome TotalIncome TotalIncome NetBalance NetBalance NetBalance NetBalance"
+        "RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentActivity RecentActivity RecentActivity RecentActivity"
+        "RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentActivity RecentActivity RecentActivity RecentActivity"
+        "RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions Bills Bills Bills Bills"
+        "RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions Bills Bills Bills Bills"
+        "PaymentMethods PaymentMethods PaymentMethods PaymentMethods Analytics Analytics Analytics Analytics BudgetOverview BudgetOverview BudgetOverview BudgetOverview"
+        "PaymentMethods PaymentMethods PaymentMethods PaymentMethods Analytics Analytics Analytics Analytics BudgetOverview BudgetOverview BudgetOverview BudgetOverview"
+        "PaymentMethods PaymentMethods PaymentMethods PaymentMethods AccountSummary AccountSummary AccountSummary AccountSummary BudgetOverview BudgetOverview BudgetOverview BudgetOverview"
+        "PaymentMethods PaymentMethods PaymentMethods PaymentMethods AccountSummary AccountSummary AccountSummary AccountSummary BudgetOverview BudgetOverview BudgetOverview BudgetOverview";
+
+}
+
+.header {
+    grid-area: header;
+}
+
+.total-expenses {
+    grid-area: TotalExpenses;
+}
+
+.total-income {
+    grid-area: TotalIncome;
+}
+
+.net-balance {
+    grid-area: NetBalance;
+}
+
+.recent-activity {
+    grid-area: RecentActivity;
+}
+
+.bills {
+    grid-area: Bills;
+}
+
+.recent-transactions {
+    grid-area: RecentTransactions;
+}
+
+.budget-overview {
+    grid-area: BudgetOverview;
+}
+
+.analytics {
+    grid-area: Analytics;
+}
+
+.account-summary {
+    grid-area: AccountSummary;
+}
+
+.payment-methods {
+    grid-area: PaymentMethods;
+}
+
+
+/* =======================================
+    HEADER SECTION
 ======================================= */
 
-/* Screens smaller than 1280px - Show icons only */
+.header {
+    margin-bottom: 40px;
+}
+
+.card-style {
+    border-radius: var(--radius-16);
+    box-shadow: var(--box-shadow);
+    border: 0.8px solid var(--border-color);
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    background-image: linear-gradient(to left,
+            oklab(0.97 -0.00371685 -0.0134976 / 0.5) 0%,
+            rgb(255, 255, 255) 50%,
+            oklab(0.962 0.000726771 -0.0179853 / 0.3) 100%);
+    overflow: hidden;
+}
+
+/* =======================================
+    LOGO AND STATUS
+======================================= */
+
+.status {
+    background-color: oklch(0.982 0.018 155.826);
+}
+
+.status {
+    padding: 6px 12px;
+    border-radius: var(--radius-8);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 0.8px solid oklch(0.962 0.044 156.743);
+}
+
+.status-icon {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: oklch(0.723 0.219 149.579);
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    opacity: 0.5;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* =======================================
+    RIGHT SIDE ELEMENTS
+======================================= */
+
+.right-side .icon {
+    width: 40px;
+    height: 40px;
+    background-color: oklch(0.985 0.002 247.839);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.8px solid oklch(0.928 0.006 264.531);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.right-side .icon:hover {
+    background-color: oklch(0.967 0.003 264.542);
+}
+
+.right-side .icon i {
+    color: oklch(0.446 0.03 256.802);
+    font-size: 1rem;
+}
+
+.right-side .icon .notification-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 16px;
+    height: 16px;
+    color: white;
+    background-color: oklch(0.637 0.237 25.331);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-side .icon .notification-badge span {
+    font-size: 0.75rem;
+}
+
+.right-side .main-text {
+    font-size: 0.875rem;
+}
+
+.right-side .sub-text {
+    font-size: 0.75rem;
+    color: #6B7280;
+}
+
+/* =======================================
+    AVATAR AND BORDERS
+======================================= */
+
+.cs-border {
+    border: 0.8px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 12px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.cs-border:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+        rgba(0, 0, 0, 0.1) 0px 2px 4px -2px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.status-desktop {
+    display: flex !important;
+}
+
+.status-mobile {
+    display: none !important;
+}
+
+/* =======================================
+    RESPONSIVE DESIGN
+======================================= */
+
+/* Tablets and smaller desktops (1280px and below) */
 @media (max-width: 1279px) {
     .sidebar {
         width: 64px;
+    }
+
+    .sidebar .logo-icon {
+        width: 40px;
+        height: 40px;
+        margin: 16px auto 0 !important;
+    }
+
+    .sidebar .logo {
+        margin-bottom: 16px !important;
+        padding-inline: 4px;
+    }
+
+    .sidebar-quick-actions {
+        margin-top: 16px !important;
+    }
+
+    .sidebar-quick-actions .btn-icon {
+        margin: 0 auto !important;
+    }
+
+    main {
+        margin-right: 64px !important;
     }
 
     .aside-content {
         padding: 0 16px !important;
     }
 
+    /* Hide text elements */
     .sidebar .logo-text,
     .sidebar .logo-subtext,
     #nav-menu h2,
@@ -299,47 +554,118 @@ body {
         display: none;
     }
 
-    .logo{
-        padding-inline: 4px;
-    }
-
-    #nav-menu{
+    #nav-menu {
         padding-inline: 8px;
+        margin-top: 0 !important;
     }
-
 
     #nav-menu span {
         justify-content: center;
     }
 
-    .sidebar-quick-actions .btn-icon {
-        margin: 0 auto !important;
-    }
-
-    .btn-hover{
+    .btn-hover {
         margin-bottom: 3px !important;
     }
 }
 
-/* Screens smaller than 768px - Hide sidebar */
+/* Mobile devices (767px and below) */
 @media (max-width: 767px) {
     .sidebar {
         display: none;
     }
 
+    .logo {
+        display: block;
+    }
+
     main {
-        margin-right: 0;
+        margin-right: 0 !important;
+    }
+
+    main .container-fluid {
+        padding: 16px !important;
+    }
+
+    .header .head {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 15px;
+    }
+
+    .logo {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px;
+        width: 100%;
+    }
+
+     /* 1) Logo Content as first block */
+    .logo-content {
+        width: 100%;
+        justify-content: start;
+    }
+
+
+    /* 4) Status goes last */
+    .status {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .status-desktop {
+        display: none !important;
+    }
+
+    .status-mobile {
+        display: flex !important;
+    }
+
+    /* 2) Right side becomes column */
+    .right-side {
+        width: 100%;
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: nowrap !important;
     }
 }
 
-/* =======================================
-    MAIN CONTENT
-======================================= */
+/* Small mobile devices (480px and below) */
+@media (max-width: 480px) {
+    .header {
+        margin-bottom: 24px;
+    }
 
+    header .head {
+        padding: 12px;
+        gap: 12px;
+    }
 
+    .logo .d-flex {
+        gap: 8px;
+    }
 
+    .right-side {
+        gap: 8px;
+    }
 
-main {
-    font-family: IBM;
-    background-color: #F9FAFB;
+    .right-side .icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .status {
+        font-size: 0.7rem;
+        padding: 4px 6px;
+    }
+
+    .right-side .main-text {
+        font-size: 0.813rem;
+    }
+
+    .right-side .sub-text {
+        font-size: 0.7rem;
+    }
 }
