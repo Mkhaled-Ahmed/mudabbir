@@ -177,16 +177,135 @@
                     </div>
                 </div>
             </div>
-            <div class="total-expenses"></div>
-            <div class="total-income"></div>
-            <div class="net-balance"></div>
-            <div class="recent-activity"></div>
-            <div class="bills"></div>
-            <div class="recent-transactions"></div>
-            <div class="budget-overview"></div>
-            <div class="analytics"></div>
-            <div class="account-summary"></div>
-            <div class="payment-methods"></div>
+            <div class="summary-cards pb-4">
+                <div class="total-expenses">
+                    <div class="card-box p-32">
+                        <p class="mb-2 fw-600 main-text">الرصيد الحالي</p>
+                        <p class="fw-700 sub-text m-0">8,450 جنية</p>
+                        <div class="mt-2 d-flex align-items-center justify-content-start text-success">
+                            <i class="fa fa-arrow-up card-box-icon"></i>
+                            <span class="fw-600 precentage">+2.5%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="total-income">
+                    <div class="card-box p-32">
+                        <p class="mb-2 fw-600 main-text">الدخل</p>
+                        <p class="fw-700 sub-text m-0">15,000 جنية</p>
+                        <div class="mt-2 d-flex align-items-center text-success">
+                            <i class="fa fa-arrow-up card-box-icon"></i>
+                            <span class="fw-600 precentage">+8.2%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="net-balance">
+                    <div class="card-box p-32">
+                        <p class="mb-2 fw-600 main-text">المصروفات</p>
+                        <p class="fw-700 sub-text m-0">10,000 جنية</p>
+                        <div class="mt-2 d-flex align-items-center text-danger">
+                            <i class="fa fa-arrow-down card-box-icon"></i>
+                            <span class="fw-600 precentage">-1.2%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-system">
+                <div class="recent-activity card-box p-4">
+                    <h2 class="fw-600 mb-4">الأنشطة الحديثة</h2>
+                    <div class="nid d-flex align-items-start gap-3 blue-border">
+                        <div
+                            class="ra-icon rounded-circle blue-icon-bg d-flex align-items-center justify-content-center bg-blue i-blue">
+                            <i class="fa fa-user-plus"></i>
+                        </div>
+                        <div class="nid-content w-100">
+                            <div class="d-flex justify-content-between mb-1 main-text">
+                                <p class="fw-700 m-0">إنشاء حساب توفير جديد</p>
+                                <span class="fw-500 m-0 text-primary">حساب</span>
+                            </div>
+                            <p class="mb-2 fw-600 sub-text">تم إنشاء حساب توفير بنك الأهلي بنجاح</p>
+                            <span class="time-text fw-600">منذ ساعة واحدة</span>
+                        </div>
+
+                    </div>
+
+                    <div class="nid d-flex align-items-start gap-3 green-border">
+                        <div
+                            class="ra-icon rounded-circle green-icon-bg d-flex align-items-center justify-content-center bg-blue i-blue">
+                            <i class="fa-solid fa-credit-card text-success"></i>
+                        </div>
+                        <div class="nid-content w-100">
+                            <div class="d-flex justify-content-between mb-1 main-text">
+                                <p class="fw-700 m-0">إضافة بطاقة جديدة</p>
+                                <span class="fw-500 m-0 text-success">بطاقة</span>
+                            </div>
+                            <p class="mb-2 fw-600 sub-text">تمت إضافة بطاقة Visa الجديدة ****2847</p>
+                            <span class="time-text fw-600">منذ 3 ساعات</span>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-3 pt-3 ra-btn">
+                        <p class="text-primary mb-0 fw-500 text-center">عرض جميع الأنشطة (23)</p>
+                    </div>
+
+                </div>
+                <div class="bills card-box p-4">
+                    <div class="d-flex justify-content-between mb-3">
+                        <h2 class="fw-600 mb-0">الفواتير الشهرية</h2>
+                        <span class="fw-500"> عرض الكل<i class="fa-solid fa-chevron-left"></i></span>
+                    </div>
+
+                    <div class="text-center mb-3 mt-0">
+                        <p class="fw-700 bills-main-text m-0">1920 جنية</p>
+                        <p class="fw-600 bills-sub-text m-0">إجمالي الفواتير الشهرية</p>
+                    </div>
+
+                    <div class="bills-grid">
+
+
+                        <div class="bill-card">
+                            <div class="icon internet"><i class="fa-solid fa-wifi"></i></div>
+                            <h3>إنترنت</h3>
+                            <p class="price">450 جنية</p>
+                            <p class="due red-color">يستحق في 3 أيام</p>
+                        </div>
+
+                        <div class="bill-card">
+                            <div class="icon electricity"><i class="fa-solid fa-bolt"></i></div>
+                            <h3>كهرباء</h3>
+                            <p class="price">400 جنية</p>
+                            <p class="due brown-color">يستحق في 5 أيام</p>
+                        </div>
+
+                        <div class="bill-card">
+                            <div class="icon phone"><i class="fa-solid fa-phone"></i></div>
+                            <h3>هاتف</h3>
+                            <p class="price">290 جنية</p>
+                            <p class="due green-color">يستحق في 10 أيام</p>
+                        </div>
+
+                        <div class="bill-card">
+                            <div class="icon netflix"><i class="fa-solid fa-tv"></i></div>
+                            <h3>Netflix</h3>
+                            <p class="price">780 جنية</p>
+                            <p class="due gray-color">يستحق في 15 يوم</p>
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+                <div class="recent-transactions"></div>
+                <div class="budget-overview"></div>
+                <div class="analytics"></div>
+                <div class="account-summary"></div>
+                <div class="payment-methods"></div>
+            </div>
+
 
         </div>
     </main>

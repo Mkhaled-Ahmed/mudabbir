@@ -293,70 +293,70 @@ main {
 }
 
 
-.container {
+.summary-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-auto-columns: 1fr;
-    gap: 16px 16px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 24px;
     grid-auto-flow: row;
     grid-template-areas:
-        "header header header header header header header header header header header header"
-        "TotalExpenses TotalExpenses TotalExpenses TotalExpenses TotalIncome TotalIncome TotalIncome TotalIncome NetBalance NetBalance NetBalance NetBalance"
-        "RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentActivity RecentActivity RecentActivity RecentActivity"
-        "RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentActivity RecentActivity RecentActivity RecentActivity"
-        "RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions Bills Bills Bills Bills"
-        "RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions RecentTransactions Bills Bills Bills Bills"
-        "PaymentMethods PaymentMethods PaymentMethods PaymentMethods Analytics Analytics Analytics Analytics BudgetOverview BudgetOverview BudgetOverview BudgetOverview"
-        "PaymentMethods PaymentMethods PaymentMethods PaymentMethods Analytics Analytics Analytics Analytics BudgetOverview BudgetOverview BudgetOverview BudgetOverview"
-        "PaymentMethods PaymentMethods PaymentMethods PaymentMethods AccountSummary AccountSummary AccountSummary AccountSummary BudgetOverview BudgetOverview BudgetOverview BudgetOverview"
-        "PaymentMethods PaymentMethods PaymentMethods PaymentMethods AccountSummary AccountSummary AccountSummary AccountSummary BudgetOverview BudgetOverview BudgetOverview BudgetOverview";
-
-}
-
-.header {
-    grid-area: header;
+        "total-expenses total-income net-balance";
 }
 
 .total-expenses {
-    grid-area: TotalExpenses;
+    grid-area: total-expenses;
 }
 
 .total-income {
-    grid-area: TotalIncome;
+    grid-area: total-income;
 }
 
 .net-balance {
-    grid-area: NetBalance;
+    grid-area: net-balance;
+}
+
+
+.grid-system {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 24px 24px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "recent-activity recent-transactions recent-transactions"
+        "bills recent-transactions recent-transactions"
+        "budget-overview analytics payment-methods"
+        "budget-overview account-summary payment-methods";
 }
 
 .recent-activity {
-    grid-area: RecentActivity;
+    grid-area: recent-activity;
 }
 
 .bills {
-    grid-area: Bills;
+    grid-area: bills;
 }
 
 .recent-transactions {
-    grid-area: RecentTransactions;
+    grid-area: recent-transactions;
 }
 
 .budget-overview {
-    grid-area: BudgetOverview;
+    grid-area: budget-overview;
 }
 
 .analytics {
-    grid-area: Analytics;
+    grid-area: analytics;
 }
 
 .account-summary {
-    grid-area: AccountSummary;
+    grid-area: account-summary;
 }
 
 .payment-methods {
-    grid-area: PaymentMethods;
+    grid-area: payment-methods;
 }
+
 
 
 /* =======================================
@@ -508,6 +508,223 @@ main {
     display: none !important;
 }
 
+
+/* =======================================
+    TOTAL EXPENSES 
+======================================= */
+
+.card-box {
+    background-color: white;
+    border-radius: var(--radius-16);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
+    border: 0.8px solid var(--border-color);
+    line-height: 1.2;
+}
+
+.card-box .main-text {
+    font-size: .875rem;
+    color: oklch(0.551 0.027 264.364);
+}
+
+.card-box .sub-text {
+    font-size: 2.25rem;
+    color: oklch(0.21 0.034 264.665);
+}
+
+.card-box .precentage {
+    font-size: .875rem;
+}
+
+.card-box .card-box-icon {
+    font-size: .875rem;
+}
+
+
+/* =======================================
+    RECENT ACTIVITY
+======================================= */
+.recent-activity h2 {
+    font-size: 1.125rem;
+    color: oklch(0.21 0.034 264.665);
+}
+
+.nid {
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: var(--radius-8);
+    line-height: 24px;
+}
+
+.blue-border {
+    border-left: 4px solid oklch(0.623 0.214 259.815);
+    background-color: #EFF6FF;
+}
+
+.green-border {
+    border-left: 4px solid oklch(0.723 0.219 149.579);
+    background-color: #F0FDF4;
+}
+
+.nid .ra-icon {
+    width: 32px;
+    height: 32px;
+    margin-top: 2px;
+}
+
+.blue-icon-bg {
+    background-color: #DBEAFE;
+}
+
+.green-icon-bg {
+    background-color: #DBFCE7;
+}
+
+.nid .ra-icon i {
+    font-size: 14px;
+    font-weight: 600;
+    color: oklch(0.546 0.245 262.881);
+}
+
+.nid-content .main-text p {
+    font-size: 0.875rem;
+    color: oklch(0.21 0.034 264.665);
+}
+
+.nid-content .main-text span {
+    font-size: 0.75rem;
+}
+
+.nid-content .sub-text {
+    font-size: .75rem;
+    color: oklch(0.446 0.03 256.802);
+}
+
+.nid-content .time-text {
+    font-size: 0.75rem;
+    color: oklch(0.551 0.027 264.364);
+}
+
+.ra-btn {
+    font-size: .875rem;
+    border-top: 1px solid oklch(0.967 0.003 264.542);
+    cursor: pointer;
+}
+
+/* =======================================
+    BILLS SECTION
+======================================= */
+.bills h2 {
+    font-size: 1.125rem;
+    color: oklch(0.21 0.034 264.665);
+}
+
+.bills span {
+    font-size: 0.875rem;
+    color: oklch(0.446 0.03 256.802);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.bills span:hover {
+    color: #000;
+}
+
+.bills-main-text {
+    font-size: 1.875rem;
+    color: oklch(0.21 0.034 264.665);
+}
+
+.bills-sub-text {
+    font-size: .875rem;
+    color: oklch(0.551 0.027 264.364);
+}
+
+.bills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+}
+
+.bill-card {
+    background: #F9FAFB;
+    border-radius: 12px;
+    padding: 12px;
+    border: 1.25px solid oklch(0.967 0.003 264.542);
+    text-align: center;
+}
+
+.bill-card .icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 auto 8px;
+}
+
+/* Colors based on type */
+.electricity {
+    background: #fff6d6;
+    color: #f5b400;
+}
+
+.internet {
+    background: #e8f2ff;
+    color: #3b73ff;
+}
+
+.netflix {
+    background: #ffe8e8;
+    color: #ff3838;
+}
+
+.phone {
+    background: #e8ffe8;
+    color: #28c76f;
+}
+
+.red-color {
+    color: oklch(0.637 0.237 25.331);
+}
+
+.brown-color {
+    color: oklch(0.705 0.213 47.604);
+}
+
+.green-color {
+    color: oklch(0.723 0.219 149.579);
+}
+
+.gray-color {
+    color: oklch(0.551 0.027 264.364);
+}
+
+
+.bill-card h3 {
+    font-size: .75rem;
+    font-weight: 600;
+    color: oklch(0.551 0.027 264.364);
+}
+
+.bill-card .price {
+    font-size: 1rem;
+    font-weight: 600;
+    color: oklch(0.21 0.034 264.665);
+    margin: 0;
+}
+
+.bill-card .due {
+    font-size: .75rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+
+
 /* =======================================
     RESPONSIVE DESIGN
 ======================================= */
@@ -599,7 +816,7 @@ main {
         width: 100%;
     }
 
-     /* 1) Logo Content as first block */
+    /* 1) Logo Content as first block */
     .logo-content {
         width: 100%;
         justify-content: start;
@@ -629,6 +846,31 @@ main {
         justify-content: space-between;
         gap: 15px;
         flex-wrap: nowrap !important;
+    }
+
+    .summary-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 24px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "net-balance"
+            "total-income"
+            "total-expenses"
+        ;
+    }
+
+    .total-expenses {
+        grid-area: total-expenses;
+    }
+
+    .total-income {
+        grid-area: total-income;
+    }
+
+    .net-balance {
+        grid-area: net-balance;
     }
 }
 
@@ -667,5 +909,9 @@ main {
 
     .right-side .sub-text {
         font-size: 0.7rem;
+    }
+
+    .bills-grid {
+        grid-template-columns: 1fr;
     }
 }
